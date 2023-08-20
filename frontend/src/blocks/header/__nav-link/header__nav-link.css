@@ -1,0 +1,13 @@
+.header__nav-link {
+  color: #fff;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  text-align: left;
+}
+
+.header__nav-link:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}

@@ -1,0 +1,14 @@
+.form-section__link {
+  color: #ffff;
+  padding: 15px 0 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.form-section__link:hover {
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.8);
+}

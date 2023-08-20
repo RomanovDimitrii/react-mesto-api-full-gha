@@ -1,0 +1,8 @@
+.form-section {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 66px 0 82px;
+}

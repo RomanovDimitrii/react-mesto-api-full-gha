@@ -1,0 +1,27 @@
+.profile {
+  display: grid;
+  padding: 40px 200px 0;
+  align-items: flex-start;
+  grid-template-columns: min-content max-content 1fr;
+  grid-template-rows: min-content;
+}
+
+@media screen and (max-width: 1279px) {
+  .profile {
+    padding: 100px calc(200px - (1280px - 100vw) / 2) 0;
+  }
+}
+@media screen and (max-width: 980px) {
+  .profile {
+    padding: 50px 50px 0;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .profile {
+    justify-content: center;
+    padding: 42px 19px 0;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content min-content 1fr;
+  }
+}

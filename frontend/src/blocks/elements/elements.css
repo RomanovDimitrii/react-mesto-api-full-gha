@@ -1,0 +1,20 @@
+.elements {
+  padding: 50px 200px 0;
+}
+@media screen and (max-width: 1279px) {
+  .elements {
+    padding: 100px calc(200px - (1280px - 100vw) / 2) 0;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .elements {
+    padding: 50px 50px 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .elements {
+    padding: 36px 19px 0;
+  }
+}

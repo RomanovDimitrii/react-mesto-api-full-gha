@@ -1,0 +1,12 @@
+.popup__save-button_not-valid {
+  background-color: white;
+  color: #000000;
+
+  border: 1px solid #000000;
+  opacity: 0.2;
+}
+
+.popup__save-button_not-valid:hover {
+  cursor: default;
+  background-color: white;
+}

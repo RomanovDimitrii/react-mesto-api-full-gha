@@ -1,0 +1,9 @@
+.header__nav-block {
+  display: flex;
+  align-items: flex-end;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #ffffff;
+  margin: 10px 0 0;
+}
