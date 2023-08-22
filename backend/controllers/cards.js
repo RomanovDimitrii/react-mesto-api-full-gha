@@ -20,7 +20,7 @@ function createCard(req, res, next) {
 }
 
 function deleteCardById(req, res, next) {
-  Card.findById(req.params.cardId) // Card.findByIdAndRemove(req.params.cardId)
+  Card.findById(req.params.cardId)
     .then((card) => {
       if (!card) {
         throw new NotFoundError('Карточка или пользователь не найден');
@@ -53,7 +53,7 @@ function dislikeCard(req, res, next) {
     req.params.cardId,
     { $pull: { likes: req.user._id } }, // убрать _id из массива
     { new: true },
-  )
+  ).populate(['owner', 'likes'])
     .then((card) => {
       if (!card) {
         throw new NotFoundError('Карточка или пользователь не найден');

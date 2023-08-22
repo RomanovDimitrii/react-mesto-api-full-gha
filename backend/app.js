@@ -1,4 +1,4 @@
-// require('dotenv').config();
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -16,10 +16,11 @@ const { createUser, login } = require('./controllers/users');
 const { signUpValidator, signInValidator } = require('./utils/validators');
 const { notFoundErr } = require('./errors/errors');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
+const { DB_ADRESS } = require('./config');
 
-const { PORT = 3000 } = process.env; // DB_ADDRESS
+const { PORT = 3000 } = process.env; // DB_ADRESS
 
-mongoose.connect('mongodb://127.0.0.1:27017/mestodb', { // DB_ADDRESS вместо 'mongodb://127.0.0.1:27017/mestodb'
+mongoose.connect(DB_ADRESS, { // DB_ADRESS вместо 'mongodb://127.0.0.1:27017/mestodb'
   useNewUrlParser: true,
   useUnifiedTopology: false,
   // useCreateIndex: true,
@@ -35,9 +36,6 @@ const limiter = rateLimit({
   legacyHeaders: false, // Disable the `X-RateLimit-*` headers
   // store: ... , // Use an external store for more precise rate limiting
 });
-
-// const bodyParser = require('body-parser');
-// app.use(bodyParser.json());
 
 // app.use(express.json()); // вместо bodyParser
 
@@ -62,7 +60,7 @@ app.use(cors({
     'https://dimitrii.mesto.nomoreparties.co',
   ],
   credentials: true,
-//  maxAge: 30,
+  maxAge: 30,
 }));
 
 app.use(limiter);
@@ -82,10 +80,6 @@ app.use(errorLogger); // подключаем логгер ошибок
 app.use(errors()); // обработчик ошибок celebrate
 
 app.use('/*', notFoundErr);
-// app.use((req, res, next) => {
-//   next(new notFoundError("Такого адреса не существует"));
-//  res.status(404).send({ message: `Ресурс по адресу ${req.path} не найден` });
-// });
 
 app.use(errorHandleMiddleware);
 

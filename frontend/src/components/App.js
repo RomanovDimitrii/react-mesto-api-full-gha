@@ -35,9 +35,6 @@ function App() {
   const location = useLocation();
 
   const checkTokenData = () => {
-    console.log('jwt');
-    // const jwt = localStorage.getItem('userId');
-    // console.log('jwt');
     const userId = localStorage.getItem("userId");
     checkToken(userId)
       .then(data => {
@@ -45,7 +42,7 @@ function App() {
           return;
         }
         setIsLoggedIn(true);
-        console.log('check');
+ //       console.log('check');
         setCurrentUserInfo(data);
       setCurrentUser(data);
         navigate(location.pathname);
@@ -59,13 +56,11 @@ function App() {
   };
 
   React.useEffect(() => {
-    console.log('checktokenApp');
     checkTokenData();
     //eslint-disable-next-line
   }, []);
 
   React.useEffect(() => {
-    console.log('promise all');
     Promise.all([api.getProfile(), api.getInitialCards()])
       .then(([profileData, cardsData]) => {
         setCurrentUser(profileData);
@@ -75,7 +70,7 @@ function App() {
       .catch(error => {
         console.error(`Ошибка при получении данных профайла и карточек: ${error}`);
       });
-  }, []);
+  }, [isLoggedIn]);
 
   function handleUpdateUser(name, about) {
     console.log('handleupdUser');
@@ -131,7 +126,7 @@ function App() {
     api
       .changeLikeCardStatus(card._id, isLiked)
       .then(newCard => {
-        setCards(state => state.map(c => (c._id === card._id ? newCard : c)));  ///вот тут беда
+        setCards(state => state.map(c => (c._id === card._id ? newCard : c))); 
       })
       .catch(error => {
         console.error(`Ошибка при передаче данных профайла : ${error}`);

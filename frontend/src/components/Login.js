@@ -27,14 +27,14 @@ function Login({ isLoggedIn, email }) {
   function handleSubmit(e) {
     e.preventDefault();
     setOnSubmit(true);
-    console.log('handlesubmit');
+  //  console.log('handlesubmit');
 
     authorize(passwordInput, emailInput)
       .then(data => {
         if (data.user._id) {
-        console.log('auth');
+  //     console.log('auth');
           localStorage.setItem("userId", data.user._id);  // было data.token data._id
-          console.log(data.user._id);
+   //       console.log(data.user._id);
           setOnSubmit(true);
           handleLogin();
           email(emailInput); 

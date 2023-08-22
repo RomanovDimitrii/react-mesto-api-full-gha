@@ -1,10 +1,10 @@
 const jwt = require('jsonwebtoken');
 
-// const { NODE_ENV, JWT_SECRET } = process.env;
+const { JWT_SECRET } = require('../config'); // new
 
 // NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret'
 
-const JWT_SECRET = 'secret-key';
+// const JWT_SECRET = 'secret-key';
 
 function generateToken(payload) {
   return jwt.sign(payload, JWT_SECRET, {
