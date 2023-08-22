@@ -1,6 +1,7 @@
 //export const BASE_URL = 'https://auth.nomoreparties.co';
 //export const BASE_URL = 'https://api.dimitrii.mesto.nomoreparties.co/';
-export const BASE_URL = 'http://localhost:3000';
+export const BASE_URL = 'https://api.dimitrii.mesto.nomoreparties.co';
+//'http://localhost:3000';
 
 export const register = (password, email) => {
   // console.log(password, email);

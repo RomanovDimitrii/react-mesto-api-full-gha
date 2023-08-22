@@ -16,7 +16,7 @@ function Main({ onEditProfile, onAddPlace, onEditAvatar, onCardClick, onCardLike
           <img
             className="profile__avatar"
             onClick={onEditAvatar}
-            src={currentUser.data.avatar}
+            src={currentUser.data.avatar || ''}
             alt="Аватар"
           />
           <img className="profile__avatar-edit" src={editSign} alt="Редактировать аватар" />

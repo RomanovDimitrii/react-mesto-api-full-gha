@@ -9,8 +9,8 @@
 
 ## Ссылки на проект
 
-IP-адрес 158.160.33.96
+IP 158.160.96.24
 
-Frontend https://dimitrii.mesto.nomoreparties.co
+Frontend https://Dimitrii.mesto.nomoreparties.co
 
 Backend https://api.dimitrii.mesto.nomoreparties.co
