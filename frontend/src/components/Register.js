@@ -74,7 +74,7 @@ function Register() {
         {/* <span className="form__input-error form__input-error_type_password"></span> */}
         <input
           className="form__input form__input_type_password"
-          type="text"
+          type="password"
           name="password"
           id="password"
           placeholder="Пароль"

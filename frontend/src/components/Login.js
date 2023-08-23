@@ -1,4 +1,4 @@
-//const baseUrl = 'https://auth.nomoreparties.co';
+
 import React from 'react';
 import Header from './Header.js';
 import FormSection from './FormSection.js';
@@ -27,14 +27,11 @@ function Login({ isLoggedIn, email }) {
   function handleSubmit(e) {
     e.preventDefault();
     setOnSubmit(true);
-  //  console.log('handlesubmit');
 
     authorize(passwordInput, emailInput)
-      .then(data => {
-        if (data.user._id) {
-  //     console.log('auth');
-          localStorage.setItem("userId", data.user._id);  // было data.token data._id
-   //       console.log(data.user._id);
+      .then(user => {
+        if (user._id) {
+          localStorage.setItem("userId", user._id);  // было data.token data._id
           setOnSubmit(true);
           handleLogin();
           email(emailInput); 
@@ -80,7 +77,7 @@ function Login({ isLoggedIn, email }) {
 
         <input
           className="form__input form__input_type_password"
-          type="text"
+          type="password"
           name="password"
           id="password"
           placeholder="Пароль"

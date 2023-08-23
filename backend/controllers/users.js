@@ -24,7 +24,7 @@ function getUserById(req, res, next) {
         throw new NotFoundError('Карточка или пользователь не найден');
       }
 
-      return res.status(200).send({ data: user });
+      return res.status(200).send(user);
     })
     .catch(next);
 }
@@ -35,7 +35,7 @@ function getUserProfile(req, res, next) {
       if (!user) {
         throw new NotFoundError('Карточка или пользователь не найден');
       }
-      return res.status(200).send({ data: user });
+      return res.status(200).send(user);
     })
     .catch(next);
 }
@@ -84,7 +84,7 @@ function changeProfile(req, res, next) {
       upsert: false, // если пользователь не найден, он не будет создан
     },
   )
-    .then((user) => res.status(200).send({ data: user }))
+    .then((user) => res.status(200).send(user))
     .catch(next);
 }
 
@@ -99,7 +99,7 @@ function login(req, res, next) {
           //     maxAge: 3600000,
           httpOnly: true,
         })
-        .send({ user });
+        .send(user);
 
       // .end({ message: "Пользователь авторизован" });
     })

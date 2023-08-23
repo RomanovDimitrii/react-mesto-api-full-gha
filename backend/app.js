@@ -54,8 +54,8 @@ app.use(helmet());
 
 app.use(cors({
   origin: [
-    'http://localhost:3001',
-    'https://localhost:3001',
+    //    'http://localhost:3001',
+    //    'https://localhost:3001',
     'http://dimitrii.mesto.nomoreparties.co',
     'https://dimitrii.mesto.nomoreparties.co',
   ],

@@ -12,7 +12,7 @@ function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar }) {
   }
 
   React.useEffect(() => {
-    avatarRef.current.value = currentUser.data.avatar;
+    avatarRef.current.value = currentUser.avatar;
   }, [currentUser, isOpen]);
 
   return (

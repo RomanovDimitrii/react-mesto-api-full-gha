@@ -38,7 +38,7 @@ function App() {
     const userId = localStorage.getItem("userId");
     checkToken(userId)
       .then(data => {
-        if (!data.data.email) {
+        if (!data.email) {
           return;
         }
         setIsLoggedIn(true);
@@ -120,7 +120,7 @@ function App() {
 
   function handleCardLike(card) {
     // Снова проверяем, есть ли уже лайк на этой карточке
-    const isLiked = card.likes.some(i => i._id === currentUser.data._id);  
+    const isLiked = card.likes.some(i => i._id === currentUser._id);  
 
     // Отправляем запрос в API и получаем обновлённые данные карточки
     api
@@ -194,7 +194,7 @@ function App() {
               <div>
                 <Header
                   navMenu="Выйти"
-                  email={currentUserInfo.data?.email || email}
+                  email={currentUserInfo.email || email}
                   isLoggedIn={setIsLoggedIn}
                   currentUserInfo={setCurrentUserInfo}
                 />

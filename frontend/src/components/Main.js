@@ -7,7 +7,8 @@ import { CardsContext } from '../contexts/CardsContext';
 function Main({ onEditProfile, onAddPlace, onEditAvatar, onCardClick, onCardLike, onCardDelete }) {
   const currentUser = React.useContext(CurrentUserContext);
   const cards = React.useContext(CardsContext);
-  //console.log('currentUser');
+
+
 
   return (
     <main className="main">
@@ -16,14 +17,14 @@ function Main({ onEditProfile, onAddPlace, onEditAvatar, onCardClick, onCardLike
           <img
             className="profile__avatar"
             onClick={onEditAvatar}
-            src={currentUser.data.avatar || ''}
+            src={currentUser.avatar}     
             alt="Аватар"
           />
           <img className="profile__avatar-edit" src={editSign} alt="Редактировать аватар" />
         </div>
         <div className="profile__info">
           <div className="profile__block">
-            <h1 className="profile__title">{currentUser.data.name}</h1>
+            <h1 className="profile__title">{currentUser.name}</h1>
             <button
               className="profile__edit-button"
               type="button"
@@ -31,7 +32,7 @@ function Main({ onEditProfile, onAddPlace, onEditAvatar, onCardClick, onCardLike
               aria-label="Редактировать профиль"
             ></button>
           </div>
-          <p className="profile__subtitle">{currentUser.data.about}</p>
+          <p className="profile__subtitle">{currentUser.about}</p>
         </div>
         <button
           className="profile__add-button"

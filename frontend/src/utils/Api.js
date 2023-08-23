@@ -93,7 +93,7 @@ class API {
 
 const api = new API({
  url: 'https://api.dimitrii.mesto.nomoreparties.co',
- //'http://localhost:3000',
+ //url: 'http://localhost:3000',
    headers: {
     'Accept': 'application/json',
      'Content-Type': 'application/json',
