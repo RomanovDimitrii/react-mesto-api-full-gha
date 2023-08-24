@@ -43,7 +43,7 @@ function Main({ onEditProfile, onAddPlace, onEditAvatar, onCardClick, onCardLike
       </section>
       <section className="elements">
         <ul className="photo-grid">
-          {cards.reverse().map(card => {
+          {cards.map(card => {
             return (
               <Card
                 key={card._id}
